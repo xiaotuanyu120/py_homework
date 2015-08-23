@@ -1,0 +1,67 @@
+/root/python/homework
+	|-- /root/python/homework
+	|	|-- _3rd
+	|	|-- _4th_1
+	|	|-- _4th_2
+	|	|-- _5th_1
+	|	|-- _5th_2
+	|	|-- _5th_3
+	|	|-- _6th_1
+	|	|-- _6th_2
+	|	|-- _7th_1
+	|-- /root/python/homework/_3rd
+	|	|-- is_num.py
+	|	|-- is_prime.py
+	|	|-- is_prime.py!
+	|-- /root/python/homework/_7th_1
+	|	|-- get_tree_dir.pyc
+	|	|-- filepath_info.txt
+	|	|-- get_tree_dir.py
+	|	|-- get_tree_dir2.py
+	|	|-- walk
+	|-- /root/python/homework/_6th_2
+	|	|-- b.py
+	|	|-- __init__.py
+	|	|-- __init__.pyc
+	|	|-- a.pyc
+	|	|-- b.pyc
+	|	|-- a.py
+	|	|-- monitor_sys_info.log
+	|	|-- test
+	|	|-- get_sys_info.py
+	|	|-- walk
+	|-- /root/python/homework/_5th_1
+	|	|-- test_lower_def.py
+	|	|-- is_prime_def.py
+	|-- /root/python/homework/_4th_1
+	|	|-- is_prime.py
+	|-- /root/python/homework/_4th_2
+	|	|-- is_prime.py
+	|	|-- test_lower.py
+	|	|-- test_upper.py
+	|-- /root/python/homework/_5th_2
+	|	|-- access.log
+	|	|-- 04_filetype_count.py
+	|	|-- my_map.py
+	|	|-- 03_clock_count.py
+	|	|-- 02_url_count.py
+	|	|-- 01_url_time.py
+	|	|-- template_01-04.py
+	|	|-- edit_02.py
+	|-- /root/python/homework/_5th_3
+	|	|-- decorator_cache.py
+	|	|-- fib_cache.py
+	|-- /root/python/homework/_6th_1
+	|	|-- exam1.py
+	|	|-- exam0.py
+	|	|-- hungry.py
+	|	|-- chaocai.py
+	|	|-- fib.py
+	|	|-- fib_cache.py
+	|	|-- fib_cache.pyc
+	|	|-- python_env.py
+	|	|-- python_env.pyc
+	|-- /root/python/homework/_7th_1/walk
+	|	|-- this_is_file_test_walk
+	|-- /root/python/homework/_6th_2/walk
+	|	|-- this_is_file_test_walk

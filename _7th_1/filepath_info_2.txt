@@ -1,0 +1,58 @@
+/root/python/homework
+├── _3rd
+│   ├── is_num.py
+│   ├── is_prime.py
+│   └── is_prime.py!
+├── _4th_1
+│   └── is_prime.py
+├── _4th_2
+│   ├── is_prime.py
+│   ├── test_lower.py
+│   └── test_upper.py
+├── _5th_1
+│   ├── is_prime_def.py
+│   └── test_lower_def.py
+├── _5th_2
+│   ├── 01_url_time.py
+│   ├── 02_url_count.py
+│   ├── 03_clock_count.py
+│   ├── 04_filetype_count.py
+│   ├── access.log
+│   ├── edit_02.py
+│   ├── my_map.py
+│   └── template_01-04.py
+├── _5th_3
+│   ├── decorator_cache.py
+│   └── fib_cache.py
+├── _6th_1
+│   ├── chaocai.py
+│   ├── exam0.py
+│   ├── exam1.py
+│   ├── fib_cache.py
+│   ├── fib_cache.pyc
+│   ├── fib.py
+│   ├── hungry.py
+│   ├── python_env.py
+│   └── python_env.pyc
+├── _6th_2
+│   ├── a.py
+│   ├── a.pyc
+│   ├── b.py
+│   ├── b.pyc
+│   ├── get_sys_info.py
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── monitor_sys_info.log
+│   ├── test
+│   └── walk
+│       └── this_is_file_test_walk
+└── _7th_1
+    ├── filepath_info_2.txt
+    ├── filepath_info.txt
+    ├── get_tree_dir2.py
+    ├── get_tree_dir.py
+    ├── get_tree_dir.pyc
+    └── walk
+        └── this_is_file_test_walk
+
+11 directories, 44 files
