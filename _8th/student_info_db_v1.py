@@ -9,13 +9,14 @@ import shelve
 # =========================
 # add student's information
 # =========================
-def add_info(db):
-    pid = raw_input("Enter unique ID: ")
-    if enquiry(db, pid):
-        print 'ID exsit, retry!'
-        cmd_keep(add_info, db)
-    else:
+def add_info(db, pid_in=False):
+    if pid_in:
         pid = pid_in
+    else:
+        pid = raw_input("Enter unique ID: ").strip()
+        if enquiry_info(db, pid):
+            print 'ID exsit!'
+            add_info(db)
     student = {}
     student['name'] = raw_input("Enter name: ")
     student['gender'] = raw_input("Enter gender: ")
@@ -23,7 +24,6 @@ def add_info(db):
     student['city'] = raw_input("Enter city currently live in: ")
     student['qq'] = raw_input("Enter QQ :")
     db[pid] = student
-    cmd_keep(add_info, db)
     return student
 
 
@@ -31,27 +31,29 @@ def add_info(db):
 # enquiry student's information
 # =============================
 def enquiry_info(db, pid_in=False):
-    if  pid_in:
+    if pid_in:
         pid = pid_in
     else:
-        pid = raw_input("Enter id to enquiry: ")
-    try:
-        # import ipdb;ipdb.set_trace()
-        result = db[pid]
-    except KeyError as e:
-        return "ID not exsit",e
-    print result
-    cmd_keep(enquiry_info, db)
-    return result
+        pid = raw_input("Enter id to enquiry or 'exit' to exit: ").strip()
+        if pid == 'exit':
+            return
+        else:
+            try:
+                result = db[pid]
+                print result
+            except KeyError as e:
+                print "ID not exsit", e
+            finally:
+                enquiry_info(db)
+        return result
 
 
 # ============================
 # update student's information
 # ============================
 def update_info(db):
-    pid = raw_input("Enter id to update: ")
-    result = add_info(db, pid_in=pid)
-    cmd_keep(update_info, db)
+    pid = raw_input("Enter id to update: ").strip()
+    result = add_info(db, pid)
     return result
 
 
@@ -59,18 +61,20 @@ def update_info(db):
 # delete student's information
 # ============================
 def delete_info(db):
-    pid = raw_input("Enter id to delete: ")
-    while True:
-        confirm = raw_input("confirm delete? (y or n)")
-        if confirm == "y":
-            del db[pid]
-            cmd_keep(delete_info, db)
-            return pid
-        elif confirm == "n":
-            cmd_keep(delete_info, db)
-            return
-        else:
-            print "invalid input, try again"
+    pid = raw_input("Enter id to delete: ").strip()
+    if enquiry_info(db, pid):
+        while True:
+            confirm = raw_input("confirm delete? (y or n)").strip().lower()
+            if confirm == "y":
+                del db[pid]
+                return pid
+            elif confirm == "n":
+                return
+            else:
+                print "invalid input, try again"
+    else:
+        print 'ID not exsit!'
+        return
 
 
 # ====================
@@ -80,17 +84,6 @@ def user_cmd():
     cmd = raw_input("Enter command(? for help)")
     cmd = cmd.strip().lower()
     return cmd
-
-
-def cmd_keep(func, *arg):
-    cmd = raw_input("Continue or back to Main? (c or m)")
-    cmd = cmd.strip().lower()
-    if cmd == 'c':
-        func(arg)
-    elif cmd == 'm':
-        return
-    else:
-        print 'invalid input, try again! (c or m)'
 
 
 # ================
@@ -109,17 +102,13 @@ def print_help():
 def main():
     while True:
         db = shelve.open('./student_info.txt')
-        """try:
-            if cmd != "enquiry":
-                cmd = user_cmd()
-        except NameError as e:"""
         cmd = user_cmd()
 
         try:
             if cmd == 'add':
                 print add_info(db)
             elif cmd == 'enquiry':
-                print enquiry_info(db)
+                enquiry_info(db)
             elif cmd == 'update':
                 print update_info(db)
             elif cmd == 'delete':
